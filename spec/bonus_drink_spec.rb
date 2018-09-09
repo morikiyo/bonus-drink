@@ -1,6 +1,19 @@
 require File.expand_path(File.dirname(__FILE__) + '/../bonus_drink')
 
 describe BonusDrink do
+  # exchange_and_drink
+  specify { expect(BonusDrink.exchange_and_drink(2)).to eq 0 }
+  specify { expect(BonusDrink.exchange_and_drink(3)).to eq 1 }
+  specify { expect(BonusDrink.exchange_and_drink(4)).to eq 1 }
+  specify { expect(BonusDrink.exchange_and_drink(5)).to eq 2 }
+  specify { expect(BonusDrink.exchange_and_drink(6)).to eq 2 }
+  specify { expect(BonusDrink.exchange_and_drink(7)).to eq 3 }
+  specify { expect(BonusDrink.exchange_and_drink(8)).to eq 3 }
+  specify { expect(BonusDrink.exchange_and_drink(9)).to eq 4 }
+  specify { expect(BonusDrink.exchange_and_drink(10)).to eq 4 }
+
+  # total_count_for
+  specify { expect(BonusDrink.total_count_for(-1)).to eq 0 }
   specify { expect(BonusDrink.total_count_for(0)).to eq 0 }
   specify { expect(BonusDrink.total_count_for(1)).to eq 1 }
   specify { expect(BonusDrink.total_count_for(2)).to eq 2 }
